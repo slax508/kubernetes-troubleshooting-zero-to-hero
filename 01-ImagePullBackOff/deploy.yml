@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iamgepullexample
+  labels:
+    app: iamgepullexample
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iamgepullexample
+  template:
+    metadata:
+      labels:
+        app: iamgepullexample
+    spec:
+      containers:
+      - name: iamgepullexample
+        image: sandhya0593/iamgepull:v1
+        ports:
+        - containerPort: 5173
